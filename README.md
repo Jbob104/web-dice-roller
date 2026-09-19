@@ -1,2 +1,2 @@
-# Azure Static Website Template
-This repository can be used to create a simple Azure hosted static website.
+# Web Dice Roller
+This repository contains source code for a web dice roller.

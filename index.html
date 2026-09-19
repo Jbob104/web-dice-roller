@@ -1,12 +1,81 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Hello World Azure Template</title>
-</head>
-<body>
-<h1>Azure Static Website Template</h1>
-<p>This page is a sample page for a “Hello World” Azure Static Website Template. The page contains an HTML validation warning. 
-Can you find and fix that warning? What about the curly quotes? Do they current work in all browsers? Can you fix the curly 
-quotes also? And what about proper indenting?</p>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Web Dice Roller</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body onload="runRoll()">
+        <div class="container">
+            <header class="head">
+                <h1>Dice Roller</h1>
+                <p>
+                    Choose a type of die, how many to roll, 
+                    and whether to roll with or without advantage or disadvantage.
+                </p>
+            </header>
+
+            <form class="dice-choice" id="dice-choice-id">
+                <label>
+                    <input type="radio" name="choice" value="d4">
+                    d4
+                </label>
+
+                <label>
+                    <input type="radio" name="choice" value="d6" checked>
+                    d6
+                </label>
+
+                <label>
+                    <input type="radio" name="choice" value="d8">
+                    d8
+                </label>
+
+                <label>
+                    <input type="radio" name="choice" value="d10">
+                    d10
+                </label>
+
+                <label>
+                    <input type="radio" name="choice" value="d12">
+                    d12
+                </label>
+
+                <label>
+                    <input type="radio" name="choice" value="d20">
+                    d20
+                </label>
+            </form>
+
+            <div class="dice-count">
+                <input type="number" name="Dice Count" step="1" min="1" value="1" id="dice-count-id">
+            </div>
+
+            <form class="modifier" id="modifier-id">
+                <label>
+                    <input type="radio" name="modifier" value="advantage">
+                    advantage
+                </label>
+
+                <label>
+                    <input type="radio" name="modifier" value="disadvantage">
+                    disadvantage
+                </label>
+
+                <label>
+                    <input type="radio" name="modifier" value="none" checked>
+                    neither
+                </label>
+            </form>
+
+            <div class="run-dice">
+                <button id="run-button" onclick="runRoll()" autofocus>Run</button>
+            </div>
+
+            <div class="result">
+                <output name="result" id="result-id">0</output>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
 </html>
