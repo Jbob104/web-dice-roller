@@ -7,73 +7,86 @@
     </head>
     <body onload="runRoll()">
         <div class="container">
-            <header class="head">
+            <header>
                 <h1>Dice Roller</h1>
                 <p>
                     Choose a type of die, how many to roll, 
                     and whether to roll with or without advantage or disadvantage.
+                    <br><br>
+                    Advantage means to roll the dice twice and take the largest value.
+                    <br><br>
+                    Disadvantage means to roll the dice twice and take the lowest value.
                 </p>
             </header>
 
-            <form class="dice-choice" id="dice-choice-id">
-                <label>
-                    <input type="radio" name="choice" value="d4">
-                    d4
-                </label>
+            <!-- Division for user input -->
+            <div class="user-input">
 
-                <label>
-                    <input type="radio" name="choice" value="d6" checked>
-                    d6
-                </label>
+                <!-- Form for user's choice of die type -->
+                <form class="dice-choice" id="dice-choice-id">
+                    <label>
+                        <input type="radio" name="choice" value="d4">
+                        d4
+                    </label>
 
-                <label>
-                    <input type="radio" name="choice" value="d8">
-                    d8
-                </label>
+                    <label>
+                        <input type="radio" name="choice" value="d6" checked>
+                        d6
+                    </label>
 
-                <label>
-                    <input type="radio" name="choice" value="d10">
-                    d10
-                </label>
+                    <label>
+                        <input type="radio" name="choice" value="d8">
+                        d8
+                    </label>
 
-                <label>
-                    <input type="radio" name="choice" value="d12">
-                    d12
-                </label>
+                    <label>
+                        <input type="radio" name="choice" value="d10">
+                        d10
+                    </label>
 
-                <label>
-                    <input type="radio" name="choice" value="d20">
-                    d20
-                </label>
-            </form>
+                    <label>
+                        <input type="radio" name="choice" value="d12">
+                        d12
+                    </label>
 
-            <div class="dice-count">
-                <input type="number" name="Dice Count" step="1" min="1" value="1" id="dice-count-id">
+                    <label>
+                        <input type="radio" name="choice" value="d20">
+                        d20
+                    </label>
+                </form>
+
+                <!-- Division for user's dice count-->
+                <div class="dice-count">
+                    <input type="number" name="Dice Count" step="1" min="1" value="1" id="dice-count-id">
+                </div>
+
+                <!-- Form for user's choice of modifier -->
+                <form class="modifier" id="modifier-id">
+                    <label>
+                        <input type="radio" name="modifier" value="advantage">
+                        advantage
+                    </label>
+
+                    <label>
+                        <input type="radio" name="modifier" value="disadvantage">
+                        disadvantage
+                    </label>
+
+                    <label>
+                        <input type="radio" name="modifier" value="none" checked>
+                        neither
+                    </label>
+                </form>
+
+                <!-- Division for a button to run the dice roll -->
+                <div class="run-dice">
+                    <button id="run-button" onclick="runRoll()" autofocus>Run</button>
+                </div>
             </div>
 
-            <form class="modifier" id="modifier-id">
-                <label>
-                    <input type="radio" name="modifier" value="advantage">
-                    advantage
-                </label>
-
-                <label>
-                    <input type="radio" name="modifier" value="disadvantage">
-                    disadvantage
-                </label>
-
-                <label>
-                    <input type="radio" name="modifier" value="none" checked>
-                    neither
-                </label>
-            </form>
-
-            <div class="run-dice">
-                <button id="run-button" onclick="runRoll()" autofocus>Run</button>
-            </div>
-
+            <!-- Division which contains the dice roll result -->
             <div class="result">
-                <output name="result" id="result-id">0</output>
+                <h2><output name="result" id="result-id">0</output></h2>
             </div>
         </div>
         <script src="index.js"></script>
